@@ -115,20 +115,6 @@ export default class fullcalendarPOC extends LightningElement {
         // console.log(FullCalendar);
 
         var self = this;
-
-        var calendar = new Calendar(calendarEl, {
-            timeZone: 'Asia/Kolkata', // the default (unnecessary to specify)
-            events: [
-              { start: '2018-09-01T12:30:00Z' }, // will be shifted to local
-              { start: '2018-09-01T12:30:00+XX:XX' }, // already same offset as local, so won't shift
-              { start: '2018-09-01T12:30:00' } // will be parsed as if it were '2018-09-01T12:30:00+XX:XX'
-            ],
-            dateClick: function(arg) {
-              console.log(arg.date.toString()); // use *local* methods on the native Date Object
-              // will output something like 'Sat Sep 01 2018 00:00:00 GMT-XX:XX (Eastern Daylight Time)'
-            }
-          });
-
         //To open the form with predefined fields
         //TODO: to be moved outside this function
         function openActivityForm(startDate, endDate){
